@@ -9,23 +9,26 @@ let taskOkCountNumber = parseInt(taskOkCounts)
 let taskremaingCountNumber = parseInt(taskremaingCounts)
 
 
-for (let i = 0; i <= completeBtn.length; i++) {
+for (let i = 0; i < completeBtn.length; i++) {
     completeBtn[i].addEventListener("click", function () {
         completeBtn[i].setAttribute('disabled', 'true')
         alert("Yeh!!, You completed Task Sucessfully")
         let cardTitle = cardTitles[i].innerText;
 
 
-        let minus = parseInt(taskremaingCountNumber--)
-        let plus = parseInt(taskOkCountNumber++)
+        let taskremaingCount = document.getElementById("taskremaingCount");
+        let taskremaingCountNumber = parseInt(taskremaingCount.innerText);
 
 
-        document.getElementById('taskremaingCount').innerText = minus
-        document.getElementById('taskOkCount').innerText = plus
-        // taskOkCountNumber.innerHTML = plus
-        // taskremaingCountNumber.innerHTML = minus
-        console.log(taskOkCountNumber)
+        let decrease = taskremaingCountNumber - 1;
+        taskremaingCount.innerText = decrease;
 
+        let taskOkCount = document.getElementById("taskOkCount");
+        let taskOkCountNumber = parseInt(taskOkCount.innerText);
+
+
+        let increase = taskOkCountNumber + 1;
+        taskOkCount.innerText = increase;
 
         let p = document.createElement("p");
         let date = new Date();
@@ -36,20 +39,15 @@ for (let i = 0; i <= completeBtn.length; i++) {
               You have Complete The Task <span>${cardTitle}</span> at ${date.toLocaleTimeString('en-us', timeSet)}
             </p>
         `;
-        if (taskremaingCountNumber === 0) {
+        if (decrease === 0) {
             alert("Congraters!! You Have Successfully Complete All the Task")
         }
         activityLog.appendChild(p)
 
-    }
-
-
-
-
-    );
+    });
 }
 document.getElementById('clearActivityLog').addEventListener('click', function () {
-    document.getElementById('activityLog').innerHTML = '';
+    document.getElementById('activityLog').innerHTML = ' ';
 })
 
 
