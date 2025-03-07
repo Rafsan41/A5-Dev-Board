@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Board</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body id="theme" class="bg-slate-200 h-1000px">
+    <!-- navbar section -->
+    <section class="p-8">
+      <section>
+        <div class="navbar bg-base-100 shadow-sm rounded-2xl p-3">
+          <div class="flex-1">
+            <div class="flex justify-start items-center">
+              <img class="w-10 h-10" src="./assets/logo.png" alt="" />
+              <p class="text-3xl pl-2">
+                Dev <span class="font-extrabold">Board</span>
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <button id="backToDesk" class=" btn btn-primary"> Back to Desk</button>
+          </div>
+        </div>
+      </section>
+
+      <section class=" mt-5">
+        <div>
+            <div class=" bg-white w-full p-3 rounded-lg mb-4"> 
+                <div class="border border-dashed border-b-gray-300 border-l-transparent border-r-transparent border-t-transparent font-bold text-lg py-3 px-2 ">
+                    Question-1: What are the different ways to select an element in the DOM?
+                </div>
+                <div class="py-3 px-2">We can select an element in the dom using
+           querySelector,querySelectorAll getElementById,getElementsByClassName,,getElementsByTagName.</div>
+            </div>
+            <div class=" bg-white w-full p-3 rounded-lg mb-4"> 
+                <div class="border border-dashed border-b-gray-300 border-l-transparent border-r-transparent border-t-transparent font-bold text-lg py-3 px-2 ">
+                    Question-2: What is the difference between innerHTML, innerText, and textContent ?
+                </div>
+                <div class="py-3 px-2">innerHTML:- it reads both the HTML markup and the text content of
+            the element. innerText:- it returns the text as it appears on
+            screen. It ignores HTML tags textContent:- it returns only the text.
+            Whiles innerText reads text as it is rendered on screen</div>
+            </div>
+            <div class=" bg-white w-full p-3 rounded-lg mb-4"> 
+                <div class="border border-dashed border-b-gray-300 border-l-transparent border-r-transparent border-t-transparent font-bold text-lg py-3 px-2 ">
+                    Question-3: What is event delegation in the DOM?
+                </div>
+                <div class="py-3 px-2">JavaScript event delegation is a simple technique by which we are adding a single event handler to a parent element in order to avoid having to add event handlers to multiple child elements.</div>
+            </div>
+            <div class=" bg-white w-full p-3 rounded-lg mb-4"> 
+                <div class="border border-dashed border-b-gray-300 border-l-transparent border-r-transparent border-t-transparent font-bold text-lg py-3 px-2 ">
+                    Question-4: What is event bubbling in the DOM?
+                </div>
+                <div class="py-3 px-2"> Event bubbling follows the opposite order as event capturing. An event propagates from a child HTML element, then moves up the DOM hierarchy to its parent elements: Event bubbling hierarchy = child → parent → body → html → document Listening to propagation events</div>
+            </div>
+            <div class=" bg-white w-full p-3 rounded-lg mb-4"> 
+                <div class="border border-dashed border-b-gray-300 border-l-transparent border-r-transparent border-t-transparent font-bold text-lg py-3 px-2 ">
+                    Question-5: How do you create, add, and remove elements using JavaScript?
+                </div>
+                <div class="py-3 px-2">We can create, add, and remove elements using JavaScript like
+            document.createElement('div');
+            document.body.appendChild(newElement); newElement.remove();</div>
+            </div>
+
+
+            
+        </div>
+    </section>
+
+    <script src="./JS/pageNavigation.js"></script>
+    <script>
+      
+    document.getElementById('backToDesk').addEventListener('click', function () {
+        window.location.href = "../index.html"
+    })
+
+    </script>
+  </body>
+</html>
